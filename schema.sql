@@ -36,3 +36,12 @@ SET symbol = INITCAP(symbol);
 ALTER TABLE properties ALTER COLUMN atomic_mass TYPE DECIMAL(10, 6);
 UPDATE properties
 SET atomic_mass = ROUND(atomic_mass, 6);
+
+INSERT INTO elements (atomic_number, symbol, name) VALUES (9, 'F', 'Fluorine');
+INSERT INTO properties (atomic_number, atomic_mass, melting_point_celsius, boiling_point_celsius, type_id) VALUES
+(9, 18.998, -220, -188.1, (SELECT type_id FROM types WHERE type = 'nonmetal'));
+
+INSERT INTO elements (atomic_number, symbol, name) VALUES (10, 'Ne', 'Neon');
+INSERT INTO properties (atomic_number, atomic_mass, melting_point_celsius, boiling_point_celsius, type_id) VALUES
+(10, 20.18, -248.6, -246.1, (SELECT type_id FROM types WHERE type = 'nonmetal'));
+
