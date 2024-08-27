@@ -27,3 +27,6 @@ ALTER TABLE properties ADD CONSTRAINT fk_type_id FOREIGN KEY (type_id) REFERENCE
 
 UPDATE properties
 SET type_id = (SELECT type_id FROM types WHERE types.type = properties.type);
+
+ALTER TABLE properties DROP COLUMN type;
+
