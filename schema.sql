@@ -9,3 +9,6 @@ ALTER TABLE elements ADD CONSTRAINT unique_symbol UNIQUE (symbol);
 ALTER TABLE elements ADD CONSTRAINT unique_name UNIQUE (name);
 ALTER TABLE elements ALTER COLUMN symbol SET NOT NULL;
 ALTER TABLE elements ALTER COLUMN name SET NOT NULL;
+
+ALTER TABLE properties ADD CONSTRAINT fk_atomic_number FOREIGN KEY (atomic_number) REFERENCES elements (atomic_number);
+
