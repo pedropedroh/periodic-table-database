@@ -32,3 +32,7 @@ ALTER TABLE properties DROP COLUMN type;
 
 UPDATE elements
 SET symbol = INITCAP(symbol);
+
+ALTER TABLE properties ALTER COLUMN atomic_mass TYPE DECIMAL(10, 6);
+UPDATE properties
+SET atomic_mass = ROUND(atomic_mass, 6);
