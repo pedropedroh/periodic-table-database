@@ -45,3 +45,5 @@ INSERT INTO elements (atomic_number, symbol, name) VALUES (10, 'Ne', 'Neon');
 INSERT INTO properties (atomic_number, atomic_mass, melting_point_celsius, boiling_point_celsius, type_id) VALUES
 (10, 20.18, -248.6, -246.1, (SELECT type_id FROM types WHERE type = 'nonmetal'));
 
+DELETE FROM elements WHERE atomic_number = 1000;
+DELETE FROM properties WHERE atomic_number = 1000;
