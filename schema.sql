@@ -21,3 +21,6 @@ INSERT INTO types (type) VALUES
 ('nonmetal'),
 ('metal'),
 ('metalloid');
+
+ALTER TABLE properties ADD COLUMN type_id INT NOT NULL;
+ALTER TABLE properties ADD CONSTRAINT fk_type_id FOREIGN KEY (type_id) REFERENCES types (type_id);
