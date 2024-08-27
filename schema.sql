@@ -30,3 +30,5 @@ SET type_id = (SELECT type_id FROM types WHERE types.type = properties.type);
 
 ALTER TABLE properties DROP COLUMN type;
 
+UPDATE elements
+SET symbol = INITCAP(symbol);
