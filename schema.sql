@@ -12,3 +12,12 @@ ALTER TABLE elements ALTER COLUMN name SET NOT NULL;
 
 ALTER TABLE properties ADD CONSTRAINT fk_atomic_number FOREIGN KEY (atomic_number) REFERENCES elements (atomic_number);
 
+CREATE TABLE types (
+    type_id SERIAL PRIMARY KEY,
+    type VARCHAR NOT NULL
+);
+
+INSERT INTO types (type) VALUES
+('nonmetal'),
+('metal'),
+('metalloid');
